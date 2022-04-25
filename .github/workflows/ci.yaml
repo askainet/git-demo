@@ -38,7 +38,7 @@ jobs:
       run: |
         docker network create ci
         docker run -d --network ci --name app -p 80:80 --rm ${{ env.DOCKER_REPOSITORY }}:${{ env.IMAGE_TAG_CI }}
-        docker run --rm --network ci curlimages/curl:latest http://app
+        docker run --rm --network ci curlimages/curl:latest http://app | grep -q "this is important"
 
     - name: Build and push container image
       uses: docker/build-push-action@v2
