@@ -1,1 +1,1 @@
-# Git branching demo
+# GitOps ArgoCD demo app
