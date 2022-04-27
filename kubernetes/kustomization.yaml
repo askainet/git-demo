@@ -17,6 +17,17 @@ replacements:
     select:
       kind: Ingress
       name: demoapp
+- source:
+    fieldPath: metadata.annotations.replacement\.kustomize\.config\.k8s\.io/replicas
+    kind: Deployment
+    name: demoapp
+  targets:
+  - fieldPaths:
+    - spec.replicas
+    select:
+      kind: Deployment
+      name: demoapp
+
 images:
 - name: ghcr.io/askainet/git-demo
   newTag: c3c024762eb6f6da7d632d3401cdbb0caed9577f
