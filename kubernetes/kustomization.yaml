@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - deployment.yaml
+  - svc.yaml
+  - ingress.yaml
+
+replacements:
+  - source:
+      kind: Ingress
+      name: demoapp
+      fieldPath: metadata.annotations.replacement\.kustomize\.config\.k8s\.io/ingress\.host
+    targets:
+      - select:
+          kind: Ingress
+          name: demoapp
+        fieldPaths:
+          - spec.rules.0.host
