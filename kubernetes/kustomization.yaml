@@ -20,4 +20,4 @@ replacements:
 
 images:
 - name: ghcr.io/askainet/git-demo
-  newTag: af2c25f429eafd61ee24b0dd06a14ccb9c7449d7
+  newTag: bba5947e004b4802d4fafa3d1da0dac9c1d02fb3
