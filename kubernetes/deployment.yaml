@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: demoapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: demoapp
@@ -18,3 +18,7 @@ spec:
         ports:
         - containerPort: 8080
           name: http
+        resources:
+          requests:
+            cpu: 10m
+            memory: 50Mi
